@@ -1,0 +1,63 @@
+﻿@model MVCCodeChallenge2.Models.Book
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <dp>Book</dp>  @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            <dp>Book</dp>    @Html.DisplayNameFor(model => model.Genere)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genere)
+        </dd>
+
+        <dt>
+            <dp>Book</dp>     @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt>
+           <dp>Author</dp> @Html.DisplayNameFor(model => model.author.IdNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.author.IdNo)
+        </dd>
+        <dt>
+            <dp>Author</dp> @Html.DisplayNameFor(model => model.author.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.author.Name)
+        </dd>
+        <dt>
+            <dp>Author</dp>  @Html.DisplayNameFor(model => model.author.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.author.Address)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    @Html.ActionLink("Back to Books List", "Index", "Book", new { id = ViewBag.AuthorId }, null)
+</p>

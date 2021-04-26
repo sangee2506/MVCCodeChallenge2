@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MVCCodeChallenge2.Models.Book>
+
+@{
+    ViewBag.Title = "Index";
+    
+}
+
+<h2>Book List of @ViewBag.AuthorName</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genere)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genere)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.BookId }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.BookId }, new { @class = "btn btn-info" })|
+            @Html.ActionLink("Delete", "Delete", new { id = item.BookId }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to Author's List", "Index", "Author")
+</div>
